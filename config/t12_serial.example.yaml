@@ -1,0 +1,42 @@
+# Copy to a local, untracked file and calibrate with your exact
+# transmitter/receiver/USB-adapter combination.
+schema_version: 1
+
+transport:
+  # Prefer /dev/serial/by-id/... or a reviewed udev alias.
+  device: /dev/serial/by-id/REPLACE_WITH_YOUR_ADAPTER
+  baudrate: 115200
+  # Supported values: vendor_decoded (35 bytes) or raw_sbus_25 (25 bytes).
+  frame_format: REPLACE_AFTER_FRAME_PROBE
+  read_timeout_s: 0.02
+  failsafe_timeout_s: 0.20
+
+calibration:
+  channel_base: 1
+  axes:
+    x1: {channel: REPLACE, raw_min: REPLACE, raw_center: REPLACE, raw_max: REPLACE, reversed: false}
+    y1: {channel: REPLACE, raw_min: REPLACE, raw_center: REPLACE, raw_max: REPLACE, reversed: false}
+    x2: {channel: REPLACE, raw_min: REPLACE, raw_center: REPLACE, raw_max: REPLACE, reversed: false}
+    y2: {channel: REPLACE, raw_min: REPLACE, raw_center: REPLACE, raw_max: REPLACE, reversed: false}
+  controls:
+    button_a: {channel: REPLACE, released: REPLACE, pressed: REPLACE}
+    button_b: {channel: REPLACE, released: REPLACE, pressed: REPLACE}
+    button_c: {channel: REPLACE, released: REPLACE, pressed: REPLACE}
+    button_d: {channel: REPLACE, released: REPLACE, pressed: REPLACE}
+    button_e: {channel: REPLACE, down: REPLACE, neutral: REPLACE, up: REPLACE}
+    button_f: {channel: REPLACE, down: REPLACE, neutral: REPLACE, up: REPLACE}
+    button_g: {channel: REPLACE, down: REPLACE, neutral: REPLACE, up: REPLACE}
+    button_h: {channel: REPLACE, down: REPLACE, neutral: REPLACE, up: REPLACE}
+
+normalized_output:
+  axes_range: [-1.0, 1.0]
+  two_position_released: -1
+  two_position_pressed: 1
+  three_position_down: -1
+  three_position_neutral: 0
+  three_position_up: 1
+
+safety:
+  serial_error_action: zero_command
+  frame_failsafe_action: zero_command
+

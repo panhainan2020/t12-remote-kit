@@ -1,0 +1,23 @@
+schema_version: 1
+transport:
+  device: /dev/serial/by-id/TEST_ONLY
+  baudrate: 115200
+  frame_format: vendor_decoded
+  failsafe_timeout_s: 0.20
+calibration:
+  channel_base: 1
+  axes:
+    x1: {channel: 1, raw_min: 282, raw_center: 1002, raw_max: 1722, reversed: false}
+    y1: {channel: 2, raw_min: 282, raw_center: 1002, raw_max: 1722, reversed: false}
+    x2: {channel: 3, raw_min: 282, raw_center: 1002, raw_max: 1722, reversed: false}
+    y2: {channel: 4, raw_min: 282, raw_center: 1002, raw_max: 1722, reversed: false}
+  controls:
+    button_a: {channel: 9, released: 1722, pressed: 282}
+    button_b: {channel: 10, released: 1722, pressed: 282}
+    button_c: {channel: 11, released: 1722, pressed: 282}
+    button_d: {channel: 12, released: 1722, pressed: 282}
+    button_e: {channel: 5, down: 282, neutral: 1002, up: 1722}
+    button_f: {channel: 6, down: 282, neutral: 1002, up: 1722}
+    button_g: {channel: 7, down: 282, neutral: 1002, up: 1722}
+    button_h: {channel: 8, down: 282, neutral: 1002, up: 1722}
+

@@ -1,0 +1,4 @@
+# Replace VID/PID with values from: udevadm info --query=property --name=/dev/ttyUSBX
+# Do not copy a receiver's unique serial number into a broadly shared rule.
+ACTION=="add|change", SUBSYSTEM=="tty", ENV{ID_VENDOR_ID}=="REPLACE_VID", ENV{ID_MODEL_ID}=="REPLACE_PID", ENV{ID_MM_DEVICE_IGNORE}="1", GROUP="dialout", MODE="0660", SYMLINK+="ttyT12"
+
